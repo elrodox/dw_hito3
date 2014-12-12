@@ -12,7 +12,7 @@
             <?php $this->renderPartial("lista", array('personas'=>$personas)); ?>
         </div>
     </div>
-    <div class="row">
-        <button class="btn btn-primary" id="boton">Ver Rest WebService</button>
-    </div>
+    <!--<div class="row">-->
+    <!--    <button class="btn btn-primary" id="boton">Ver Rest WebService</button>-->
+    <!--</div>-->
 </div>

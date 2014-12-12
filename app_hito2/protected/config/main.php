@@ -51,6 +51,7 @@ return array(
                 array('persona/index',  'pattern' => 'api/persona', 'verb' => 'GET', 'parsingOnly' => true),
                 array('persona/create', 'pattern' => 'api/persona', 'verb' => 'POST', 'parsingOnly' => true),
                 array('persona/view',   'pattern' => 'api/persona/<id>', 'verb' => 'GET', 'parsingOnly' => true),
+                array('persona/view',   'pattern' => 'api/persona/ver/<nombre>', 'verb' => 'GET', 'parsingOnly' => true),
                 array('persona/update', 'pattern' => 'api/persona/<id>', 'verb' => 'PUT', 'parsingOnly' => true),
                 array('persona/delete', 'pattern' => 'api/persona/<id>', 'verb' => 'DELETE', 'parsingOnly' => true),
             ),
@@ -67,9 +68,9 @@ return array(
 		// uncomment the following to use a MySQL database
 
 		'db'=>array(
-			'connectionString' => 'mysql:host=127.0.0.1;dbname=dwhito2',
+			'connectionString' => 'mysql:host=127.0.0.1;dbname=c9',
 			'emulatePrepare' => true,
-			'username' => 'root',
+			'username' => 'elrodox',
 			'password' => '',
 			'charset' => 'utf8',
 		),

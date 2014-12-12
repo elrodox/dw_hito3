@@ -38,7 +38,7 @@ class PersonaController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index', 'gestion', 'eliminar', 'create', 'actualizar', 'verRest'),
+				'actions'=>array('index', 'gestion', 'eliminar', 'create', 'actualizar', 'view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -82,9 +82,14 @@ class PersonaController extends Controller
 		}else{
 			$this->render("index");
 		}
-
-
-
+	}
+	public function actionView(){
+        if($this->isRestService()){
+            $model = Persona::model()->findByAttributes(
+            	array('nombre'=>$_GET['nombre']));
+            
+        	$this->render('empty', array('model' => $model));
+        }
 	}
 	public function actionGestion(){
 		$personas = Persona::model()->findAll();

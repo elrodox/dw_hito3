@@ -3679,3 +3679,263 @@ Stack trace:
 REQUEST_URI=/DW/hito3/app_hito2/persona/verRest
 HTTP_REFERER=http://localhost/DW/hito3/app_hito2/persona/gestion
 ---
+2014/12/11 23:25:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/ubuntu/workspace/yii-framework/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /home/ubuntu/workspace/yii-framework/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /home/ubuntu/workspace/yii-framework/framework/base/CModule.php(387): CDbConnection->init()
+#3 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(667): CActiveRecord->getDbConnection()
+#6 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(1469): CActiveRecord->getCommandBuilder()
+#7 /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php(90): CActiveRecord->findAll()
+#8 /home/ubuntu/workspace/yii-framework/framework/web/actions/CInlineAction.php(49): PersonaController->actionGestion()
+#9 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /home/ubuntu/workspace/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(291): CFilterChain->run()
+#16 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(282): CController->run('gestion')
+#18 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('persona/gestion')
+#19 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /home/ubuntu/workspace/app_hito2/index.php(13): CApplication->run()
+#21 /home/ubuntu/workspace/index.php(1): require_once('/home/ubuntu/wo...')
+#22 {main}
+REQUEST_URI=/index.php/persona/gestion
+---
+2014/12/11 23:26:02 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'c9.persona' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `persona`.
+in /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php (90)
+in /home/ubuntu/workspace/app_hito2/index.php (13)
+in /home/ubuntu/workspace/index.php (1)
+2014/12/11 23:26:02 [error] [exception.CDbException] exception 'CDbException' with message 'The table "persona" for active record class "Persona" cannot be found in the database.' in /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php:2362
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Persona))
+#1 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(1350): CActiveRecord->getTableSchema()
+#3 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#4 /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php(90): CActiveRecord->findAll()
+#5 /home/ubuntu/workspace/yii-framework/framework/web/actions/CInlineAction.php(49): PersonaController->actionGestion()
+#6 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /home/ubuntu/workspace/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(282): CController->run('gestion')
+#15 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('persona/gestion')
+#16 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /home/ubuntu/workspace/app_hito2/index.php(13): CApplication->run()
+#18 /home/ubuntu/workspace/index.php(1): require_once('/home/ubuntu/wo...')
+#19 {main}
+REQUEST_URI=/index.php/persona/gestion
+---
+2014/12/11 23:26:14 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'c9.persona' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `persona`.
+in /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php (90)
+in /home/ubuntu/workspace/app_hito2/index.php (13)
+in /home/ubuntu/workspace/index.php (1)
+2014/12/11 23:26:14 [error] [exception.CDbException] exception 'CDbException' with message 'The table "persona" for active record class "Persona" cannot be found in the database.' in /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php:2362
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Persona))
+#1 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(1350): CActiveRecord->getTableSchema()
+#3 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#4 /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php(90): CActiveRecord->findAll()
+#5 /home/ubuntu/workspace/yii-framework/framework/web/actions/CInlineAction.php(49): PersonaController->actionGestion()
+#6 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /home/ubuntu/workspace/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(282): CController->run('gestion')
+#15 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('persona/gestion')
+#16 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /home/ubuntu/workspace/app_hito2/index.php(13): CApplication->run()
+#18 /home/ubuntu/workspace/index.php(1): require_once('/home/ubuntu/wo...')
+#19 {main}
+REQUEST_URI=/index.php/persona/gestion
+---
+2014/12/12 02:33:55 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'c9.persona' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `persona`.
+in /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php (90)
+in /home/ubuntu/workspace/app_hito2/index.php (13)
+2014/12/12 02:33:55 [error] [exception.CDbException] exception 'CDbException' with message 'The table "persona" for active record class "Persona" cannot be found in the database.' in /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php:2362
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Persona))
+#1 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(1350): CActiveRecord->getTableSchema()
+#3 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#4 /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php(90): CActiveRecord->findAll()
+#5 /home/ubuntu/workspace/yii-framework/framework/web/actions/CInlineAction.php(49): PersonaController->actionGestion()
+#6 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /home/ubuntu/workspace/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(282): CController->run('gestion')
+#15 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('persona/gestion')
+#16 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /home/ubuntu/workspace/app_hito2/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/app_hito2/persona/gestion
+---
+2014/12/12 02:37:45 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'c9.persona' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `persona`.
+in /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php (90)
+in /home/ubuntu/workspace/app_hito2/index.php (13)
+2014/12/12 02:37:45 [error] [exception.CDbException] exception 'CDbException' with message 'The table "persona" for active record class "Persona" cannot be found in the database.' in /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php:2362
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Persona))
+#1 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(1350): CActiveRecord->getTableSchema()
+#3 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#4 /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php(90): CActiveRecord->findAll()
+#5 /home/ubuntu/workspace/yii-framework/framework/web/actions/CInlineAction.php(49): PersonaController->actionGestion()
+#6 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /home/ubuntu/workspace/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(282): CController->run('gestion')
+#15 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('persona/gestion')
+#16 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /home/ubuntu/workspace/app_hito2/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/app_hito2/persona/gestion
+---
+2014/12/12 04:28:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/persona/id/2".' in /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('api/persona/id/...')
+#1 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /home/ubuntu/workspace/app_hito2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app_hito2/api/persona/id/2
+---
+2014/12/12 04:29:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in /home/ubuntu/workspace/yii-framework/framework/web/CController.php:483
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(270): CController->missingAction('view')
+#1 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('persona/view')
+#3 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/ubuntu/workspace/app_hito2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/app_hito2/api/persona/2
+---
+2014/12/12 04:29:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in /home/ubuntu/workspace/yii-framework/framework/web/CController.php:483
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(270): CController->missingAction('view')
+#1 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('persona/view')
+#3 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/ubuntu/workspace/app_hito2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/app_hito2/api/persona/1
+---
+2014/12/12 04:30:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in /home/ubuntu/workspace/yii-framework/framework/web/CController.php:483
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(270): CController->missingAction('view')
+#1 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('persona/view')
+#3 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/ubuntu/workspace/app_hito2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/app_hito2/api/persona/view
+---
+2014/12/12 04:30:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in /home/ubuntu/workspace/yii-framework/framework/web/CController.php:483
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(270): CController->missingAction('view')
+#1 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('persona/view')
+#3 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/ubuntu/workspace/app_hito2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/app_hito2/persona/view
+---
+2014/12/12 04:31:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in /home/ubuntu/workspace/yii-framework/framework/web/CController.php:483
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(270): CController->missingAction('view')
+#1 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('persona/view')
+#3 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /home/ubuntu/workspace/app_hito2/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/app_hito2/api/persona/1
+---
+2014/12/12 04:33:32 [error] [php] Missing argument 1 for PersonaController::loadModel(), called in /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php on line 88 and defined (/home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php:177)
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(133): PersonaController->runAction()
+#2 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /home/ubuntu/workspace/yii-framework/framework/web/filters/CInlineFilter.php(58): PersonaController->filterAccessControl()
+#5 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(291): CFilterChain->run()
+#7 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(265): PersonaController->runActionWithFilters()
+#8 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(282): PersonaController->run()
+#9 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /home/ubuntu/workspace/app_hito2/index.php(13): CWebApplication->run()
+REQUEST_URI=/app_hito2/api/persona/1
+in /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php (177)
+in /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php (88)
+in /home/ubuntu/workspace/app_hito2/index.php (13)
+2014/12/12 04:36:06 [error] [php] Undefined index: id (/home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php:88)
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(133): PersonaController->runAction()
+#1 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /home/ubuntu/workspace/yii-framework/framework/web/filters/CInlineFilter.php(58): PersonaController->filterAccessControl()
+#4 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(291): CFilterChain->run()
+#6 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(265): PersonaController->runActionWithFilters()
+#7 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(282): PersonaController->run()
+#8 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /home/ubuntu/workspace/app_hito2/index.php(13): CWebApplication->run()
+REQUEST_URI=/app_hito2/api/persona/nombre/1
+in /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php (88)
+in /home/ubuntu/workspace/app_hito2/index.php (13)
+2014/12/12 04:41:45 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'. The SQL statement executed was: SELECT * FROM `persona` `t` WHERE `t`.`nombre`=:yp0 AND (status=1) LIMIT 1.
+in /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php (90)
+in /home/ubuntu/workspace/app_hito2/index.php (13)
+2014/12/12 04:41:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'status' in 'where clause'. The SQL statement executed was: SELECT * FROM `persona` `t` WHERE `t`.`nombre`=:yp0 AND (status=1) LIMIT 1' in /home/ubuntu/workspace/yii-framework/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /home/ubuntu/workspace/yii-framework/framework/db/ar/CActiveRecord.php(1519): CActiveRecord->query(Object(CDbCriteria))
+#3 /home/ubuntu/workspace/app_hito2/protected/controllers/PersonaController.php(90): CActiveRecord->findByAttributes(Array, 'status=1')
+#4 /home/ubuntu/workspace/yii-framework/framework/web/actions/CInlineAction.php(49): PersonaController->actionView()
+#5 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /home/ubuntu/workspace/yii-framework/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /home/ubuntu/workspace/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(291): CFilterChain->run()
+#12 /home/ubuntu/workspace/yii-framework/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(282): CController->run('view')
+#14 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('persona/view')
+#15 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /home/ubuntu/workspace/app_hito2/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/app_hito2/api/persona/ver/Rodolfo
+---
+2014/12/12 04:59:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "api/persona/ver/rodolfo".' in /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/ubuntu/workspace/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('api/persona/ver...')
+#1 /home/ubuntu/workspace/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /home/ubuntu/workspace/app_hito2/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app_hito2/api/persona/ver/rodolfo
+---

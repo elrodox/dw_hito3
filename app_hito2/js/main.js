@@ -78,7 +78,7 @@ $("body").on("submit", "#formulario", function(e){
     var action = $("#formulario").attr("action");
     console.log("data: "+data);
     $.post(
-        "index.php?r=persona/"+action, //$(this).attr("action"),
+        "/app_hito2/persona/"+action, //$(this).attr("action"),
         data, // data
         function(resp, estado){
             console.log(resp);
@@ -97,7 +97,7 @@ $("body").on("click", "#eliminar", function(){
         tr.remove();
     });
     $.get(
-        $(this).attr("href"),
+        "/app_hito2/persona/eliminar",//$(this).attr("href"),
         {
             id: valorID
         }

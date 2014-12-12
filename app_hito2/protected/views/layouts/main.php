@@ -28,8 +28,8 @@
 		<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>
 	</div>
 	<ul class="nav nav-tabs">
-		<li role="presentation" class="active"><a href="?r=persona/index">Inicio</a></li>
-		<li role="presentation"><a href="?r=persona/gestion">Gestion Personas</a></li>
+		<li role="presentation" class="active"><a href="/app_hito2/persona/index">Inicio</a></li>
+		<li role="presentation"><a href="/app_hito2/persona/gestion">Gestion Personas</a></li>
 	</ul>
 	
 	

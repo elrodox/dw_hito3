@@ -1,0 +1,1 @@
+<?php require_once __DIR__."/app_hito2/index.php"; ?>
